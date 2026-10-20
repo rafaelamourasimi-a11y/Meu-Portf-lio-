@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça Rafaela, estudante do ensino médio apaixonada por Biologia, música, culinária e animais.">
+    <title>Rafaela | Portfólio pessoal</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #492b3b;
+            --muted: #796474;
+            --accent: #ed4d9b;
+            --accent-dark: #c92d79;
+            --paper: #fff5fa;
+            --surface: #ffffff;
+            --line: #f3d7e5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(ellipse at 8% 14%, rgba(255, 203, 226, 0.3), transparent 28rem),
+                var(--paper);
+            color: var(--ink);
+            font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(1080px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 250, 253, 0.94);
+        }
+
+        .navigation {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            color: var(--accent-dark);
+            font-family: "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+            font-size: 1.55rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--accent);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: clamp(40px, 8vw, 100px);
+            padding-top: clamp(64px, 10vw, 112px);
+            padding-bottom: clamp(72px, 11vw, 124px);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin: 0 0 14px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: #ffe3ef;
+            color: var(--accent-dark);
+            font-size: 0.8rem;
+            font-weight: 750;
+            letter-spacing: 0.07em;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            max-width: 620px;
+            margin-bottom: 18px;
+            color: var(--accent-dark);
+            font-family: "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+            font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            line-height: 1.25;
+        }
+
+        .hero-intro {
+            max-width: 590px;
+            margin-bottom: 28px;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+        }
+
+        .hero-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-dark);
+            font-size: 0.95rem;
+            font-weight: 650;
+            padding: 9px 15px;
+            border: 1px solid #f4c1d8;
+            border-radius: 999px;
+            background: #fffafd;
+        }
+
+        .hero-note::before {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--accent);
+            content: "";
+        }
+
+        .portrait-wrap {
+            position: relative;
+            width: min(100%, 360px);
+            justify-self: end;
+        }
+
+        .portrait-wrap::before {
+            position: absolute;
+            z-index: 0;
+            inset: 18px -18px -18px 18px;
+            border: 2px solid #f2a9ca;
+            border-radius: 180px 180px 24px 24px;
+            content: "";
+        }
+
+        .portrait {
+            position: relative;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            border-radius: 180px 180px 24px 24px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 22px 50px rgba(185, 63, 120, 0.18);
+        }
+
+        .content-section {
+            padding: clamp(64px, 9vw, 96px) 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-heading {
+            max-width: 620px;
+            margin-bottom: 36px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 10px;
+            color: var(--accent-dark);
+            font-family: "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .section-heading p {
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .about-card,
+        .course-card {
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--surface);
+            box-shadow: 0 12px 28px rgba(185, 63, 120, 0.06);
+        }
+
+        .about-card h3 {
+            margin-bottom: 8px;
+            color: var(--accent-dark);
+            font-family: "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+            font-size: 1.05rem;
+        }
+
+        .about-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.97rem;
+        }
+
+        .course-card {
+            padding: clamp(24px, 5vw, 42px);
+        }
+
+        .course-card h3 {
+            margin-bottom: 24px;
+            color: var(--accent-dark);
+            font-family: "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+            font-size: 1.25rem;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .course-list li {
+            min-height: 100%;
+            padding: 20px;
+            border: 1px solid #f7d4e4;
+            border-radius: 14px;
+            background: #fff5fa;
+            font-weight: 650;
+        }
+
+        .site-footer {
+            padding: 24px 0;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .site-footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 720px) {
+            .navigation {
+                min-height: 68px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 42px;
+            }
+
+            .portrait-wrap {
+                width: min(78%, 330px);
+                justify-self: center;
+            }
+
+            .about-grid,
+            .course-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                width: min(100% - 30px, 1080px);
+            }
+
+            .navigation {
+                align-items: flex-start;
+                flex-direction: column;
+                justify-content: center;
+                gap: 4px;
+                padding: 12px 0;
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navigation container" aria-label="Navegação principal">
+            <a class="brand" href="#inicio">Rafaela</a>
+            <ul class="nav-links">
+                <li><a href="#sobre-mim">Sobre mim</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container" id="inicio" aria-labelledby="titulo-principal">
+            <div>
+                <p class="eyebrow">Portfólio pessoal</p>
+                <h1 id="titulo-principal">Oi, eu sou a Rafaela.</h1>
+                <p class="hero-intro">Sou estudante do segundo ano do ensino médio e gosto de aprender, explorar a Biologia e aproveitar os pequenos momentos do dia a dia.</p>
+                <span class="hero-note">Estudante apaixonada por Biologia</span>
+            </div>
+            <div class="portrait-wrap">
+                <img class="portrait" src="Galeria/WhatsApp%20Image%202026-10-16%20at%2014.54.28%20(2).jpeg" alt="Retrato de Rafaela">
+            </div>
+        </section>
+
+        <section class="content-section" id="sobre-mim" aria-labelledby="sobre-mim-titulo">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Um pouco sobre mim</p>
+                    <h2 id="sobre-mim-titulo">O que eu gosto de fazer</h2>
+                    <p>Meu tempo livre é ainda melhor quando posso aproveitar as coisas e as pessoas que amo.</p>
+                </div>
+                <div class="about-grid">
+                    <article class="about-card">
+                        <h3>Música</h3>
+                        <p>Amo escutar música e passar o tempo desfrutando de uma boa melodia.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>Culinária e bons momentos</h3>
+                        <p>Adoro cozinhar e estar perto das pessoas que são especiais para mim.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>Biologia, comida e animais</h3>
+                        <p>Biologia é minha matéria favorita. Também adoro comida e animais.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="cursos" aria-labelledby="cursos-titulo">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Aprendizado</p>
+                    <h2 id="cursos-titulo">Cursos</h2>
+                    <p>Formação realizada pela AFESU Morro Velho / SENAI.</p>
+                </div>
+                <div class="course-card">
+                    <h3>AFESU Morro Velho / SENAI</h3>
+                    <ul class="course-list">
+                        <li>Operador de microcomputador</li>
+                        <li>Implantação de redes locais</li>
+                        <li>Excel básico com IA generativa</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Portfólio pessoal de Rafaela</p>
+        </div>
+    </footer>
+</body>
+</html>
