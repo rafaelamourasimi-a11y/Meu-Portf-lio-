@@ -261,6 +261,24 @@
             font-weight: 650;
         }
 
+        .senai-link {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 11px 18px;
+            border-radius: 999px;
+            background: var(--accent-dark);
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .senai-link:hover,
+        .senai-link:focus-visible {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
         .site-footer {
             padding: 24px 0;
             border-top: 1px solid var(--line);
@@ -370,15 +388,16 @@
                 <div class="section-heading">
                     <p class="eyebrow">Aprendizado</p>
                     <h2 id="cursos-titulo">Cursos</h2>
-                    <p>Formação realizada pela AFESU Morro Velho / SENAI.</p>
+                    <p>Cursos realizados na AFESU Morro Velho, em parceria com o SENAI, com certificado SENAI.</p>
                 </div>
                 <div class="course-card">
-                    <h3>AFESU Morro Velho / SENAI</h3>
+                    <h3>Formação AFESU Morro Velho + SENAI</h3>
                     <ul class="course-list">
                         <li>Operador de microcomputador</li>
                         <li>Implantação de redes locais</li>
                         <li>Excel básico com IA generativa</li>
                     </ul>
+                    <a class="senai-link" href="https://www.sp.senai.br/unidade/leopoldina/" target="_blank" rel="noopener noreferrer">Saiba mais sobre o SENAI</a>
                 </div>
             </div>
         </section>
